@@ -14,6 +14,7 @@
 		3FEECA991EC133E800611B2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEECA971EC133E800611B2D /* LaunchScreen.storyboard */; };
 		3FEECAA41EC133E800611B2D /* SQLite_PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECAA31EC133E800611B2D /* SQLite_PersistenceTests.swift */; };
 		3FEECAAF1EC133E800611B2D /* SQLite_PersistenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECAAE1EC133E800611B2D /* SQLite_PersistenceUITests.swift */; };
+		3FEECABE1EC1368C00611B2D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEECABD1EC1368C00611B2D /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		3FEECAAA1EC133E800611B2D /* SQLite PersistenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SQLite PersistenceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEECAAE1EC133E800611B2D /* SQLite_PersistenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite_PersistenceUITests.swift; sourceTree = "<group>"; };
 		3FEECAB01EC133E800611B2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEECABD1EC1368C00611B2D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3FEECABF1EC1376200611B2D /* SQLite Persistence-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite Persistence-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEECABE1EC1368C00611B2D /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,8 @@
 				3FEECAA21EC133E800611B2D /* SQLite PersistenceTests */,
 				3FEECAAD1EC133E800611B2D /* SQLite PersistenceUITests */,
 				3FEECA8C1EC133E800611B2D /* Products */,
+				3FEECABC1EC1368C00611B2D /* Frameworks */,
+				3FEECABF1EC1376200611B2D /* SQLite Persistence-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,10 +103,10 @@
 		3FEECA8D1EC133E800611B2D /* SQLite Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				3FEECA8E1EC133E800611B2D /* AppDelegate.swift */,
 				3FEECA901EC133E800611B2D /* ViewController.swift */,
 				3FEECA921EC133E800611B2D /* Main.storyboard */,
 				3FEECA951EC133E800611B2D /* Assets.xcassets */,
+				3FEECA8E1EC133E800611B2D /* AppDelegate.swift */,
 				3FEECA971EC133E800611B2D /* LaunchScreen.storyboard */,
 				3FEECA9A1EC133E800611B2D /* Info.plist */,
 			);
@@ -123,6 +129,14 @@
 				3FEECAB01EC133E800611B2D /* Info.plist */,
 			);
 			path = "SQLite PersistenceUITests";
+			sourceTree = "<group>";
+		};
+		3FEECABC1EC1368C00611B2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FEECABD1EC1368C00611B2D /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 				TargetAttributes = {
 					3FEECA8A1EC133E800611B2D = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					3FEECA9E1EC133E800611B2D = {
@@ -414,10 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "SQLite Persistence/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Catlett.SQLite-Persistence";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite Persistence-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +444,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "SQLite Persistence/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daniel-Catlett.SQLite-Persistence";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite Persistence-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
